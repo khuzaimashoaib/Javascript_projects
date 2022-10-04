@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Tricks</title>
+</head>
+<body>
+
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Hello');
+
+    // Interpolated
+    console.log('hello I am a %s string!', 'pop');
+
+    // Styled
+    console.log('%chello I am a string!','font-size:50px; background:blue;' );
+
+    // warning!
+    console.warn("Nooo")
+
+    // Error :|
+    console.error('Errrrror');
+
+    // Info
+    console.info('I play football ');
+
+    // Testing
+    const p = document.querySelector('p');
+    console.assert(1 === 15, "Wroong" )
+    // clearing
+    console.clear()
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog =>{
+        console.groupCollapsed(`${dog.name}`)
+        console.log(`this is ${dog.name}`)
+        console.log(`${dog.name} is ${dog.age} years old`)
+        console.log(`${dog.name} is ${dog.age * 2} years old`)
+        console.groupEnd(`dog.name`);
+    })
+    // counting
+    console.count('khuzaima');
+    console.count('khuzaima');
+    console.count('shoaib');
+    console.count('khuzaima');
+    console.count('shoaib');
+    console.count('shoaib');
+    console.count('khuzaima');
+
+    // timing
+    console.table(dogs);
+  </script>
+    
+</body>
+</html>
